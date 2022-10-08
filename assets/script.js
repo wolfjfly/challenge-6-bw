@@ -14,32 +14,53 @@ function searchApi(userCityInput) {
     fetch(GeocodingApi)
         .then((res) => res.json())
         .then((res) => {
+            console.log('1st')
             console.log(res);
             lon= res.coord.lon;
             lat= res.coord.lat;
             id= res.id;
+            var name= res.name;
+            var temp= res.main.temp;
+            var wind= res.wind.speed;
+            var humi= res.main.humidity;
+            var icon= res.weather[0].icon;
             console.log("lat: " + lat, "Lon: " + lon,  'id ' + id);
-            function bwApi(){
-                var bwUrl= 'https:api.openweathermap.org/data/2.5/forecast?lat=' + lat +'&lon=' + lon + '&appid=' + openKey + '&cnt=1';
-                fetch(bwUrl)
+            console.log(name + '  Temp  ' + temp, ' Wind ' + wind, ' Humidity ' + humi, ' Icon ' + icon);
+            function uvApi(){
+                var uvUrl= 'https:api.openweathermap.org/data/2.5/forecast?lat=' + lat +'&lon=' + lon + '&appid=' + openKey + '&cnt=1';
+                fetch(uvUrl)
                     .then((res)=> res.json())
-                    .then((res)=>{console.log(res);
+                    .then((res)=>{
+                        console.log('2nd');
+                        console.log(res);
                     // var uvIndex= res[0].value;
                     //     console.log(uvIndex);
                         function forcast() {
-                            var forcastUrl= 'https:api.openweathermap.org/data/2.5/forecast?id=' + id + '&appid=' + openKey ;
+                            var forcastUrl= 'https:api.openweathermap.org/data/2.5/forecast?id=' + id + '&appid=' + openKey + '&cnt=5' ;
                             fetch(forcastUrl)
                                 .then((res)=> res.json())
                                 .then((res)=> {
-                                    console.log(res.list.slice(0,5));
+                                    
+                                    console.log("3rd");
+                                    console.log(res);
                                     });
                         } 
                         forcast();  
                     });
             }
-            bwApi();
+            uvApi();
         });
     }
+    
+
+
+
+
+
+
+
+
+
 
     var searchHistoryList = function(userCityInput) {
         $('.past-search:contains("' + userCityInput + '")').remove();
@@ -71,17 +92,17 @@ function searchApi(userCityInput) {
         }
     };
 
-$("#form").on("submit", function() {
+$("#Form").on("submit", function() {
     event.preventDefault();
     var userCityInput = $("#userCityInput").val();
-    currentWeatherSection(userCityInput);
-    fiveDayForecastSection(userCityInput);
+    searchApi(userCityInput);
+    // fiveDayForecastSection(userCityInput);
 });
 
-$("#histCon").on("click", "p", function() {
-    var lastCityInput = $(this).text();
-    currentWeatherSection(lastCityInput);
-    fiveDayForecastSection(lastCityInput);
-    var lastCityInputClicked = $(this);
-    lastCityInputClicked.remove();
-});
+// $("#histCon").on("click", "p", function() {
+//     var lastCityInput = $(this).text();
+//     searchApi(lastCityInput);
+//     fiveDayForecastSection(lastCityInput);
+//     var lastCityInputClicked = $(this);
+//     lastCityInputClicked.remove();
+// });
