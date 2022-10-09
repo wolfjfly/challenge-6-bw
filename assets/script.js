@@ -3,7 +3,7 @@
 // appid: The application id or key
 var openKey= 'e629ac90d489be3a662623628b909aaa'
 var openAPI= 'https:api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=e629ac90d489be3a662623628b909aaa'
-var day= [];
+var searchHist= [];
 var lat;
 var lon;
 var id;
@@ -13,7 +13,6 @@ function searchApi(userCityInput) {
     fetch(GeocodingApi)
         .then((res) => res.json())
         .then((res) => {
-            console.log('1st')
             console.log('1st')
             console.log(res);
             lon= res.coord.lon;
@@ -138,16 +137,58 @@ function searchApi(userCityInput) {
                         var futureWind = $("#futureWind-32");
                         futureWind.text("Wind Speed: " + res.list[32].wind.speed + "MPH");
                     });
+                    
         }
-            foreCastApi();
+        searchHistList(userCityInput);
+        foreCastApi();
         });
         }
 
+var searchHistList = function(userCityInput) {
+    $('.past-search:contains("' + userCityInput + '")').remove();
+
+    var searchHistEntry = $("<p>");
+    searchHistEntry.addClass("past-search");
+    searchHistEntry.text(userCityInput);
+
+    var searchEntryCont = $("<div>");
+    searchEntryCont.addClass("lastHistContainer");
+
+    searchEntryCont.append(searchHistEntry);
+
+    var searchHistContEl = $("#searchHistCont");
+    searchHistContEl.append(searchEntryCont);
+
+    if (searchHist.length > 0){
+        var previousSearchHist = localStorage.getItem("searchHist");
+        searchHist = JSON.parse(previousSearchHist);
+    }
+    searchHist.push(userCityInput);
+    localStorage.setItem("searchHist", JSON.stringify(searchHist));
+
+    $("#userCityInput").val("");
+};
+var loadSearchHistory = function() {
+    var savedSearchHist = localStorage.getItem("searchHist");
+    if (!savedSearchHist) {
+    return false;
+    }
+    savedSearchHist = JSON.parse(savedSearchHist);
+        for (var i = 0; i < savedSearchHist.length; i++) {
+        searchHistList(savedSearchHist[i]);
+    }
+};
 
 $("#Form").on("submit", function() {
     event.preventDefault();
     var userCityInput = $("#userCityInput").val();
+
     searchApi(userCityInput);
     
 });
-
+$("#searchHistCont").on("click", "p", function() {
+        var lastCityInput = $(this).text();
+        searchApi(lastCityInput);
+        var lastCityInputClicked = $(this);
+        lastCityInputClicked.remove();
+});
