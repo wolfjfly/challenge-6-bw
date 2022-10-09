@@ -1,7 +1,6 @@
 // Current Weather Data = api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 // q: The query parameter
 // appid: The application id or key
-
 var openKey= 'e629ac90d489be3a662623628b909aaa'
 var openAPI= 'https:api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=e629ac90d489be3a662623628b909aaa'
 var day= [];
@@ -14,6 +13,7 @@ function searchApi(userCityInput) {
     fetch(GeocodingApi)
         .then((res) => res.json())
         .then((res) => {
+            console.log('1st')
             console.log('1st')
             console.log(res);
             lon= res.coord.lon;
@@ -67,6 +67,7 @@ function searchApi(userCityInput) {
                         var futureWind = $("#futureWind-0");
                         futureWind.text("Wind Speed: " + res.list[0].wind.speed + "MPH");
                                     
+                        
                         //Future Day 2
                         var futureDate = $("#futureDate-8");
                         date = moment().add(2, "d").format("M/D/YYYY");
@@ -84,6 +85,7 @@ function searchApi(userCityInput) {
                         var futureWind = $("#futureWind-8");
                         futureWind.text("Wind Speed: " + res.list[8].wind.speed + "MPH");
     
+
                         //Future Day 3
                         var futureDate = $("#futureDate-16");
                         date = moment().add(3, "d").format("M/D/YYYY");
@@ -118,6 +120,7 @@ function searchApi(userCityInput) {
                         var futureWind = $("#futureWind-24");
                         futureWind.text("Wind Speed: " + res.list[24].wind.speed + "MPH");
     
+
                         //Future Day 5
                         var futureDate = $("#futureDate-32");
                         date = moment().add(5, "d").format("M/D/YYYY");

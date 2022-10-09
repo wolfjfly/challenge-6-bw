@@ -1,21 +1,41 @@
- html {
-    line-height: 1.15;
-    /* 1 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */
-  }
-  body {
-    margin: 0;
-  }
-  
-  main {
-    display: block;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-  
-  
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.searchLabel {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.userCityInput {
+  width: 100%;
+  height: 40px;
+  border-color: lightgrey;
+  border-width: thin;
+  padding: 0 15px;
+}
+
+.searchBtn {
+  padding: 10px 15px;
+}
+
+.searchHistContainer {
+  padding: 10px;
+}
+
+.past-search {
+  background-color: white;
+  border-width: thin;
+  border-color: lightgrey;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 0;
+  text-align: left;
+  width: 350px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 20px;
+  color: grey;
+}  
