@@ -1,17 +1,68 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding:0px
+  
 }
 
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  margin: 5px;
+}
+.jumbotron {
+  text-align: center;
+  background-image: linear-gradient(to right, rgb(116, 97, 255) , rgb(38, 0, 255));
+  background-color:blue;
+  color: white;
+  border-radius: 0;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.titleHeader{
+  margin-left: 400px;
+}
+header i{
+  color:white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.lsContianer{
+  margin-left: 10px;
+
+}
+.searchContainer{
+  border-bottom-style: solid;
+}
+.col{
+  padding: 0px;
+}
+#searchBox{
+  padding: 10px 0px 10px 0px;
+}
+button{
+  color: white;
+  padding: 0px;
+}
 .searchLabel {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 10px 0px 10px 15px;
+  margin: 0px;
+}
+h3{
+  margin: 0px;
 }
 
 .userCityInput {
   width: 100%;
   height: 40px;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
   border-color: lightgrey;
   border-width: thin;
   padding: 0 15px;
@@ -21,21 +72,35 @@
   padding: 10px 15px;
 }
 
-.searchHistContainer {
-  padding: 10px;
-}
-
 .past-search {
-  background-color: white;
+  background-color: darkgray;
   border-width: thin;
   border-color: lightgrey;
   border-style: solid;
   border-radius: 3px;
-  margin: 0;
-  text-align: left;
-  width: 350px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
   height: 45px;
-  line-height: 45px;
-  padding: 0 20px;
-  color: grey;
+  padding: 5px 20px ;
+  color: black;
+  width: 100%;
 }  
+
+.futureCard{
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-right: 5px;
+  
+}
+.addSome{
+  padding: 5px;
+}
+#currentCont{
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}

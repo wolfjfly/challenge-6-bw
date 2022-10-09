@@ -49,6 +49,8 @@ function searchApi(userCityInput) {
                         console.log('2nd');
                         console.log(res);
                         console.log(res.list.length);
+                        var foreCastTitle=$("#futureForecastTitle")
+                        foreCastTitle.text("5-Day Forecast")
                         //Future Day 1
                         var futureDate = $("#futureDate-0");
                         date = moment().add(1, "d").format("M/D/YYYY");
@@ -152,7 +154,7 @@ var searchHistList = function(userCityInput) {
     searchHistEntry.text(userCityInput);
 
     var searchEntryCont = $("<div>");
-    searchEntryCont.addClass("lastHistContainer");
+    searchEntryCont.addClass("lastHistContainer col-sm-12");
 
     searchEntryCont.append(searchHistEntry);
 
@@ -182,9 +184,8 @@ var loadSearchHistory = function() {
 $("#Form").on("submit", function() {
     event.preventDefault();
     var userCityInput = $("#userCityInput").val();
-
     searchApi(userCityInput);
-    
+
 });
 $("#searchHistCont").on("click", "p", function() {
         var lastCityInput = $(this).text();
