@@ -30,14 +30,83 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-8 ">
-                            <input type="text" id="userCityInput" name="userCityInput" class="searchLabel rounded">
+                            <input type="text" id="userCityInput" name="userCityInput" class="userCityInput rounded">
                         </div>
                         <div class="col-sm-4 ">
-                            <button type="submit" class="btn bg-primary rounded search-button">
+                            <button type="submit" class="btn bg-primary rounded searchBtn">
                                 <i class="fas fa-search-location"></i>
                             </button>
                         </div>
+                    </div>
                 </form>
             </div>
+        </div>
+        <div class="col-sm-8">
+            <div id="currentCont" class="col-sm-8 d-bloc">
+                <div class="currentContTitle">
+                    <h2 id="currentTitle" class="currentTitle d-inlie"><i id="currentIcon"></i></h2>
+                    <img id="currentIcon" class="d-inline" src="" alt="">
+                </div>
+                <p id="currentTemp" class="currentTemp"></p>
+                <p id="currentWind" class="currentWind"></p>
+                <p id="currentHumi" class="currentHumi"></p>
+            </div>
+        
+            <div class="col-sm-8 futureForecastContainer d-block">
+                <h2 class="futureForeCastTitle" id="futureForecastTitle"></h2>
+                <div id="foreCastsCardsContainer" class="foreCastsCardsContainer d-flex justify-content-between">
 
+                    <div class="futureCard bg-primary rounded">
+                        <p class="futureDate" id="futureDate-0"></p>
+                        <img id="futureIcon-0" src="" alt="">
+                        <p class="futureHighTemp" id="futureHightemp-0"></p>
+                        <p class="futureMinTemp" id="futureMinTemp-0"></p>
+                        <p class="futureHumi" id="futureHumi-0"></p>
+                        <p class="futureWind" id="futureWind-0"></p>
+                    </div>
+
+                    <div class="futureCard bg-primary rounded">
+                        <p class="futureDate" id="futureDate-8"></p>
+                        <img id="futureIcon-8" src="" alt="">
+                        <p class="futureHighTemp" id="futureHightemp-8"></p>
+                        <p class="futureMinTemp" id="futureMinTemp-8"></p>
+                        <p class="futureHumi" id="futureHumi-8"></p>
+                        <p class="futureWind" id="futureWind-8"></p>
+                    </div>
+
+                    <div class="futureCard bg-primary rounded">
+                        <p class="futureDate" id="futureDate-16"></p>
+                        <img id="futureIcon-16" src="" alt="">
+                        <p class="futureHighTemp" id="futureHightemp-16"></p>
+                        <p class="futureMinTemp" id="futureMinTemp-16"></p>
+                        <p class="futureHumi" id="futureHumi-16"></p>
+                        <p class="futureWind" id="futureWind-16"></p>
+                    </div>
+
+                    <div class="futureCard bg-primary rounded">
+                        <p class="futureDate" id="futureDate-24"></p>
+                        <img id="futureIcon-24" src="" alt="">
+                        <p class="futureHighTemp" id="futureHightemp-24"></p>
+                        <p class="futureMinTemp" id="futureMinTemp-24"></p>
+                        <p class="futureHumi" id="futureHumi-24"></p>
+                        <p class="futureWind" id="futureWind-24"></p>
+                    </div>
+
+                    <div class="futureCard bg-primary rounded">
+                        <p class="futureDate" id="futureDate-32"></p>
+                        <img id="futureIcon-32" src="" alt="">
+                        <p class="futureHighTemp" id="futureHightemp-32"></p>
+                        <p class="futureMinTemp" id="futureMinTemp-32"></p>
+                        <p class="futureHumi" id="futureHumi-32"></p>
+                        <p class="futureWind" id="futureWind-32"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
             
