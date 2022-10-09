@@ -14,6 +14,7 @@ function searchApi(userCityInput) {
         .then((res) => res.json())
         .then((res) => {
             console.log('1st')
+            console.log('1st')
             console.log(res);
             lon= res.coord.lon;
             lat= res.coord.lat;
