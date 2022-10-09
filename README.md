@@ -21,8 +21,6 @@ e629ac90d489be3a662623628b909aaa
 
 
 ## License
-
-## License
 MIT Licesens
 
 ##
@@ -30,3 +28,4 @@ github
 https://github.com/wolfjfly/challenge-6-bw
 ##
 Deployed
+https://wolfjfly.github.io/challenge-6-bw/
