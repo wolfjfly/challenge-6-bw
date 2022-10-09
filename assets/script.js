@@ -9,7 +9,7 @@ var lon;
 var id;
 
 function searchApi(userCityInput) {
-    var GeocodingApi = (`https:api.openweathermap.org/data/2.5/weather?q=${userCityInput}&appid=${openKey}&units=imperial`);
+    var GeocodingApi = `https:api.openweathermap.org/data/2.5/weather?q=${userCityInput}&appid=${openKey}&units=imperial`;
     fetch(GeocodingApi)
         .then((res) => res.json())
         .then((res) => {
