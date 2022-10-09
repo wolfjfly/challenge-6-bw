@@ -11,6 +11,8 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 
+<img width="1207" alt="Demo" src="https://github.com/wolfjfly/challenge-6-bw/blob/main/assets/video/Challenge-6-working-localy_%20Oct%209%2C%202022%203_55%20PM.gif">
+
 <p>
 <img src="assets\images\screenshot.JPG" alt="screen shot">
 </p>
